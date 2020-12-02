@@ -1,0 +1,22 @@
+{
+  "name": "fastmongo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.20",
+    "mongodb": "^3.6.3"
+  },
+  "keywords": [
+    "easy",
+    "mongo",
+    "mongodb",
+    "fast"
+  ],
+  "author": "Kıraç Armağan Önal",
+  "license": "MIT",
+  "description": ""
+}
