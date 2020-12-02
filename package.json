@@ -1,6 +1,6 @@
 {
   "name": "fastmongo",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
@@ -17,6 +17,6 @@
     "fast"
   ],
   "author": "Kıraç Armağan Önal",
-  "license": "MIT",
+  "license": "GPL-v3",
   "description": ""
 }
