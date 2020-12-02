@@ -47,7 +47,7 @@ class CollectionManager {
     /**
      * @param {String} name 
      */
-    async getDocumentManager(name) {
+    async Database(name = "FASTMONGO") {
 
         if (this.#documentManagers.has(name)) {
             return this.#documentManagers.get(name);

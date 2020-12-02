@@ -13,3 +13,5 @@ async function createFastMongo(URI, collectionName = "FASTMONGO", mongoClientOpt
     await mongo.init(URI, collectionName, mongoClientOptions);
     return mongo;
 }
+
+module.exports = { createFastMongo };
