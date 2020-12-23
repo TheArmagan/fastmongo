@@ -71,6 +71,14 @@ class CollectionManager {
 
     }
 
+    /**
+     * @param {String} name
+     */
+    async deleteDatabase(name) {
+        let result = await this.#mainCollection.deleteOne({ name });
+        return Boolean(result?.result?.ok);
+    }
+
     get destroyed() {
         return this.#destroyed;
     }

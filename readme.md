@@ -14,24 +14,22 @@ FastMongo is a easy to use mongodb wrapper. Like quick.db.
 
 ## Usage
 
-> ```js
-> const { createFastMongo } = require("fastmongo");
->
-> (async () => {
->   const mongo = await createFastMongo("mongodb://localhost/FASTMONGO");
->
->   const myDB = await mongo.Database();
->   myDB.set("nice.data", 1243);
->   myDB.get("nice.data", "defaultValue");
->   myDB.has("nice.data");
->   // Converted normal value to array value here:
->   myDB.update("nice.data", (oldValue) => {
->     return [oldValue];
->   });
->   myDB.delete("nice.data");
->   // Soon: push, add, subtract
-> })();
-> ```
+```js
+const { createFastMongo } = require("fastmongo");
+
+(async () => {
+  const mongo = await createFastMongo("mongodb://calhost/FASTMONGO");
+
+  const myDB = await mongo.Database();
+  myDB.set("nice.data", 1243);
+  myDB.get("nice.data", "defaultValue");
+  myDB.has("nice.data");
+  myDB.update("nice.data", (oldValue) => {
+    return [oldValue];
+  });
+  myDB.delete("nice.data");
+})();
+```
 
 ---
 
@@ -41,4 +39,14 @@ FastMongo is a easy to use mongodb wrapper. Like quick.db.
 
 ---
 
+## TODO
+
+- [✔](https://example.com "Done in version 0.0.2!") ~~`db.add(), db.subtract(), db.push(), db.shift()`~~
+- [❌](https://example.com "Not done yet..") `Cache System`
+- [❌](https://example.com "Not done yet..") `Better Data Fetching System`
+
+---
+
 > ##### Created By Kıraç Armağan Önal With ❤
+
+---

@@ -1,5 +1,6 @@
 const mongodb = require("mongodb");
 const lodash = require("lodash");
+const { isNull } = require("lodash");
 
 class DocumentManager {
 
@@ -94,6 +95,81 @@ class DocumentManager {
         return isFound;
     }
 
+
+    /**
+     * @param {String} dataPath
+     * @param {Any} value
+     */
+    push(dataPath, value) {
+        return this.update(dataPath, (d) => {
+            if (typeof d == "undefined" || isNull(d)) d = [];
+            if (!Array.isArray(d)) throw `${dataPath} is not a array!`;
+            d.push(value);
+            return d;
+        })
+    }
+
+    /**
+     * @param {String} dataPath
+     * @param {Any} value
+     */
+    shift(dataPath, value) {
+        return this.update(dataPath, (d) => {
+            if (typeof d == "undefined" || isNull(d)) d = [];
+            if (!Array.isArray(d)) throw `${dataPath} is not a array!`;
+            d.shift(value);
+            return d;
+        })
+    }
+
+
+    /**
+    * @param {String} dataPath
+    * @param {Any} value
+    */
+    add(dataPath, value) {
+        return this.update(dataPath, (d) => {
+            if (typeof d == "undefined" || isNull(d)) d = 0;
+            d = d + value;
+            return d;
+        })
+    }
+
+    /**
+    * @param {String} dataPath
+    * @param {Any} value
+    */
+    subtract(dataPath, value) {
+        return this.update(dataPath, (d) => {
+            if (typeof d == "undefined" || isNull(d)) d = 0;
+            d = d - value;
+            return d;
+        })
+    }
+
+    /**
+    * @param {String} dataPath
+    * @param {Any} value
+    */
+    multiply(dataPath, value) {
+        return this.update(dataPath, (d) => {
+            if (typeof d == "undefined" || isNull(d)) d = 0;
+            d = d * value;
+            return d;
+        })
+    }
+
+    /**
+    * @param {String} dataPath
+    * @param {Any} value
+    */
+    division(dataPath, value) {
+        return this.update(dataPath, (d) => {
+            if (typeof d == "undefined" || isNull(d)) d = 0;
+            d = d / value;
+            return d;
+        })
+    }
 }
 
 module.exports = { DocumentManager };
